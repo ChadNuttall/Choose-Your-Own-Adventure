@@ -34,7 +34,7 @@
 <body>
 
   <h1>Choose Your Adventure</h1>
-  <p id="story-text">You stand at the edge of a dark forest. Before you lies a winding gravel road with a sign that reads "This way to Jurassic Park". Do you wish to visit?</p>
+  <p id="story-text">You stand at the edge of a dark forest.<br>Before you lies a winding gravel road with a sign that reads "This way to Jurassic Park".<br>Do you wish to visit?</p>
   <img id="story-image" src="images/dark-jungle.jpg" alt="Scene Image">
   <div id="buttons">
     <button onclick="makeChoice('visit')">Visit Jurassic Park</button>
@@ -53,8 +53,10 @@
       // },
     const story = {
       start: {
-        text: "You stand at the edge of a dark forest. Before you lies a winding gravel road with a sign that reads 'This way to Jurassic Park'. Do you wish to visit?",
-        image: "dark-jungle.jpg",
+        text: "You stand at the edge of a dark forest.<br>"+
+        "Before you lies a winding gravel road with a sign that reads 'This way to Jurassic Park'.<br>"+
+        "Do you wish to visit?",
+        image: "images/dark-jungle.jpg",
         choices: {
           visit: { next: "jurassicPark", text: "Visit Jurassic Park" },
           run: { next: "run", text: "Run Away" }
@@ -70,7 +72,7 @@
       },
       guidedTour: {
         text: "And away you go! No driver, no locks on the doors, only beautiful tropical jungle lined with huge electric fences crackling with 10,000 volts...<br>and an eerie lack of dinosaurs.",
-        image: "images/jurassic-park.webp",
+        image: "images/jurassic-park-jeep.jpg",
         choices: {
           stay: { next: "stayInJeep", text: "Stay in the Jeep" },
           explore: { next: "whatIsOutThere", text: "What's out there?" }
@@ -78,7 +80,7 @@
       },
       selfTour: {
         text: "It's a lovley day for a walk in the park. Who would you like to visit first?",
-        image: "images/jurassic-park.webp",
+        image: "images/jungle-park.webp",
         choices: {
           chicken: { next: "chicken", text: "Chicken"},
           closedTRex: { next: "closedTRex", text: "Tyranasourus Rex"}
@@ -88,7 +90,7 @@
         text: "Hungry already?! You begin to float through the air following the sweet, sweet smells of fresh meat to the food court where your purchase chicken tenders.<br>"+
           "Delicious!<br>"+
           "Where would you like to visit next?",
-        image: "images/jurassic-park.webp",
+        image: "images/chicken.jpg",
         choices: {
           areThoseEggs: { next: "areThoseEggs", text: "Stegosaurus" },
           areThoseEggs: { next: "areThoseEggs", text: "Brontosaurus" }
@@ -98,7 +100,7 @@
         text: "Huffing from the extra long walk you break through the trees to discover...<br>"+
           "A goat. How disapointing.<br>"+
           "Where to next?",
-        image: "images/jurassic park.webp",
+        image: "images/goat.webp",
         choices: {
           areThoseEggs: { next: "areThoseEggs", text: "Stegosaurus" },
           areThoseEggs: { next: "areThoseEggs", text: "Brontosaurus" }
@@ -107,7 +109,7 @@
       areThoseEggs: {
         text: "The jungle is a flurry of colors and smells, teaming with life! And anyway 10,000 volt fences are impervious to Dinosours<br>"+
           "Just then something catches your eye in the jungle.",
-        image: "images/jurassic park.webp",
+        image: "images/beautiful-jungle.jpg",
         choices: {
           dinoEggs: { next: "dinoEggs", text: "Next" },
         }
@@ -118,7 +120,7 @@
           "That can't be right... In the lab they said that all the Dinosaurs where engineered to be female. Astonished you stoop to pick one up.<br>"+
           "In your head you are realing. Now you can hear the soft chirping from inside the eggs and the cracking of their shells. The egg is warm and not as smooth as it looks.<br>"+
           "You hear Jeff Goldblum's voice echoing in your mind, 'Life finds a way!'",
-        image: "images/jurassic park.webp",
+        image: "images/dino-nest.jpg",
         choices: {
           tyrannosaurusRex: { next: "tyrannosaurusRex", text: "Next" }
         }
@@ -127,7 +129,7 @@
         text:"The forest seems to grow darker...<br>"+
           "A supreme stillness settles over you. Listening you realize you can't hear the crackling of the electric fence... <br>"+
           "SUDDENLY Chad pops out from behind a tree. 'It's a BOY!'<br>"+
-          "You are then eaten by a Tyrannosaurus Rex!",
+          "<br>You are then eaten by a Tyrannosaurus Rex!",
         image: "images/tyrannosaurus-rex.webp",
         choices: {}
       },
@@ -139,7 +141,6 @@
           "Screaming, you run for your life into the jungle. Behind you the Tyrannosaurus-Rex bellows in triumph over it's nemesis, the Jeep!",
         image: "images/tyrannosaurus-rex-jeep.jpeg",
         choices: {
-          // Need to Finish
           safeAtLast: { next: "safeAtLast", text: "Next" }
         }
       },
@@ -147,6 +148,7 @@
         text: "The sounds of battle fade behind you but still you keep running untill finnally you can't anymore.<br>"+
           "Lungs heaving, heart pounding, legs aching you slump against a tree to gulp down cool water from your canteen.<br>"+
           "Glancing up you notice there's something curious about the clearing you've stummbled into...",
+        image: "images/safe-clearing.jpg",
         choices: {
           dinoEggs: { next: "dinoEggs", text: "Next" },
         }
@@ -155,7 +157,9 @@
         text: "You step out to investigate. The jungle is a flurry of colors and smells, teaming with life! And anyway 10,000 volt fences are impervious to Dinosours<br>"+
           "Just then something catches your eye in the jungle.",
         image: "images/jurassic-park.webp",
-        choices: {}
+        choices: {
+          dinoEggs: { next: "dinoEggs", text: "Next" }
+        }
       },
       run: {
         text: "As you turn to run away, a Tyrannosaurus Rex bursts from the trees and catches you.<br>"+
