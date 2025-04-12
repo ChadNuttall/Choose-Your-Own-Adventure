@@ -35,7 +35,7 @@
 
   <h1>Choose Your Adventure</h1>
   <p id="story-text">You stand at the edge of a dark forest. Before you lies a winding gravel road with a sign that reads "This way to Jurassic Park". Do you wish to visit?</p>
-  <img id="story-image" src="images/jurassic-park.webp" alt="Scene Image">
+  <img id="story-image" src="images/dark-jungle.jpg" alt="Scene Image">
   <div id="buttons">
     <button onclick="makeChoice('visit')">Visit Jurassic Park</button>
     <button onclick="makeChoice('run')">Run Away</button>
@@ -54,7 +54,7 @@
     const story = {
       start: {
         text: "You stand at the edge of a dark forest. Before you lies a winding gravel road with a sign that reads 'This way to Jurassic Park'. Do you wish to visit?",
-        image: "images/jurassic-park.webp",
+        image: "dark-jungle.jpg",
         choices: {
           visit: { next: "jurassicPark", text: "Visit Jurassic Park" },
           run: { next: "run", text: "Run Away" }
@@ -90,17 +90,33 @@
           "Where would you like to visit next?",
         image: "images/jurassic-park.webp",
         choices: {
-          // name: { next: "", text: "" },
-          // name: { next: "", text: "" }
+          areThoseEggs: { next: "areThoseEggs", text: "Stegosaurus" },
+          areThoseEggs: { next: "areThoseEggs", text: "Brontosaurus" }
         }
       },
       closedTRex:{
-
+        text: "Huffing from the extra long walk you break through the trees to discover...<br>"+
+          "A goat. How disapointing.<br>"+
+          "Where to next?",
+        image: "images/jurassic park.webp",
+        choices: {
+          areThoseEggs: { next: "areThoseEggs", text: "Stegosaurus" },
+          areThoseEggs: { next: "areThoseEggs", text: "Brontosaurus" }
+        }
+      },
+      areThoseEggs: {
+        text: "The jungle is a flurry of colors and smells, teaming with life! And anyway 10,000 volt fences are impervious to Dinosours<br>"+
+          "Just then something catches your eye in the jungle.",
+        image: "images/jurassic park.webp",
+        choices: {
+          dinoEggs: { next: "dinoEggs", text: "Next" },
+        }
       },
       dinoEggs: {
         text: "As you come closser you see it is a nest of Dinosaur Eggs. <br>"+
+          "You can see some of them wiggling"+
           "That can't be right... In the lab they said that all the Dinosaurs where engineered to be female. Astonished you stoop to pick one up.<br>"+
-          "In your head you are realing. The egg is warm and not as smooth as it looks.<br>"+
+          "In your head you are realing. Now you can hear the soft chirping from inside the eggs and the cracking of their shells. The egg is warm and not as smooth as it looks.<br>"+
           "You hear Jeff Goldblum's voice echoing in your mind, 'Life finds a way!'",
         image: "images/jurassic park.webp",
         choices: {
@@ -124,7 +140,15 @@
         image: "images/tyrannosaurus-rex-jeep.jpeg",
         choices: {
           // Need to Finish
-          tyrannosaurusRex: { next: "", text: "Next" }
+          safeAtLast: { next: "safeAtLast", text: "Next" }
+        }
+      },
+      safeAtLast: {
+        text: "The sounds of battle fade behind you but still you keep running untill finnally you can't anymore.<br>"+
+          "Lungs heaving, heart pounding, legs aching you slump against a tree to gulp down cool water from your canteen.<br>"+
+          "Glancing up you notice there's something curious about the clearing you've stummbled into...",
+        choices: {
+          dinoEggs: { next: "dinoEggs", text: "Next" },
         }
       },
       whatIsOutThere: {
